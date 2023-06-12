@@ -1,8 +1,20 @@
 name: workflow1
-on: push
+on: 
+  push:
+    branches: [ "main" ]
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - name: run a single command on ubuntu machine
-      run: hostname
+      - name: run a single command on ubuntu machine
+        run: hostname
+      - name: step2
+        run: |
+          echo "running step 2"
+          sleep 30
+          hostname
+      - name: step3
+        run: |
+          echo "running step 3"
+          sleep 30
+          hostname
