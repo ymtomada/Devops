@@ -1,4 +1,4 @@
-name: main-workflow
+nname: main-workflow
 on:
   push:
     branches: [ "main" ]
@@ -7,7 +7,11 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Run a one-line script
-        run: echo running workflow in main branch
+        run: |
+          echo running workflow in main branch
+          hostname
+          sleep 10
+          touch /tmp/ymtomada
