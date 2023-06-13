@@ -1,0 +1,12 @@
+name: release-workflow
+on:
+  push:
+    branches: [ "release" ]
+  pull_request:
+    branches: [ "release" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo running workflow in release branch
