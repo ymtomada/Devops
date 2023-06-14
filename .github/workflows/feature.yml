@@ -1,7 +1,7 @@
 name: feature_workflow
 on:
   push:
-      branches: [ "feature"]
+      branches: [ "feature" ]
 jobs:
   job1:
     runs-on: ubuntu-latest
