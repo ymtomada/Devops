@@ -1,0 +1,20 @@
+name: Greeting on variable day
+on:
+  push
+env:
+  DAY_OF_WEEK: Monday
+  a: b
+  First_name: Gagandeep
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
+      First_name: Mark
+    steps:
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Eric
+      - name: repo variables
+        run: echo "hi ! value of var is ${{ vars.var1 }}, value of secret1 is ${{ secrets.secret1 }} and today is ${{ vars.day }} "
