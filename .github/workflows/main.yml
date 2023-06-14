@@ -9,11 +9,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: first step
-        run: echo running workflow in main branch
-      - name: second step 
-        run: echo "hello from second condition based step"
-        if: runner.os == 'Linux'
-      - name: third step
-        run: echo "hello from 3rd step"
-        if: runner.os != 'Linux'
+      - run: eho "build started"
+      - run: echo "build completed"
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: echo "test started"
+      - run: echo "test completed"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "deploy started"
+      - run: echo "deploy completed"
+    needs: test
