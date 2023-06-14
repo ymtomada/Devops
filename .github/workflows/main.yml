@@ -8,8 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
-      - run: echo "build started"
+      - run: eho "build started"
+        continue-on-error: true
       - run: echo "build completed"
   test:
     runs-on: ubuntu-latest
