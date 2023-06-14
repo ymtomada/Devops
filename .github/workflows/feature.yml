@@ -1,0 +1,10 @@
+name: feature_workflow
+on:
+  push:
+      branches: [ "feature"]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run a single command on abuntu machine
+        run: hostname
